@@ -8,6 +8,11 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-cartagena.jpg";
 import logoAsset from "@/assets/monarco-logo.asset.json";
+import destCartagena from "@/assets/dest-cartagena.jpg";
+import destMedellin from "@/assets/dest-medellin.jpg";
+import destEjeCafetero from "@/assets/dest-eje-cafetero.jpg";
+import destBogota from "@/assets/dest-bogota.jpg";
+import destSanAndres from "@/assets/dest-san-andres.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -101,18 +106,18 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAVBAR */}
-      <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/40">
+      <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-transparent">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
           <a href="#inicio" className="flex items-center gap-2 shrink-0">
             <img src={logoAsset.url} alt="Monarco Viajes y Turismo" className="h-12 w-auto" />
           </a>
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
-            <a href="#nosotros" className="hover:text-primary transition">Nosotros</a>
-            <a href="#servicios" className="hover:text-primary transition">Servicios</a>
-            <a href="#destinos" className="hover:text-primary transition">Destinos</a>
-            <a href="#galeria" className="hover:text-primary transition">Galería</a>
-            <a href="#testimonios" className="hover:text-primary transition">Testimonios</a>
-            <a href="#contacto" className="hover:text-primary transition">Contacto</a>
+          <nav className="hidden lg:flex items-center gap-8 text-sm font-semibold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+            <a href="#nosotros" className="hover:text-secondary transition">Nosotros</a>
+            <a href="#servicios" className="hover:text-secondary transition">Servicios</a>
+            <a href="#destinos" className="hover:text-secondary transition">Destinos</a>
+            <a href="#galeria" className="hover:text-secondary transition">Galería</a>
+            <a href="#testimonios" className="hover:text-secondary transition">Testimonios</a>
+            <a href="#contacto" className="hover:text-secondary transition">Contacto</a>
           </nav>
           <a href={WHATSAPP} target="_blank" rel="noopener" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition shadow-glow">
             Cotizar <ArrowRight className="h-4 w-4" />
@@ -122,7 +127,7 @@ function HomePage() {
           </button>
         </div>
         {open && (
-          <div className="lg:hidden border-t border-border/40 bg-background">
+          <div className="lg:hidden backdrop-blur-xl bg-background/80 border-t border-border/40">
             <nav className="px-6 py-5 flex flex-col gap-4 text-sm font-medium">
               {["nosotros","servicios","destinos","galeria","testimonios","contacto"].map(s => (
                 <a key={s} href={`#${s}`} onClick={() => setOpen(false)} className="capitalize">{s}</a>
@@ -162,7 +167,7 @@ function HomePage() {
               </a>
             </div>
             <div className="mt-14 grid grid-cols-3 gap-6 max-w-xl">
-              {[["10+","Destinos"],["500+","Viajeros felices"],["RNT","55541"]].map(([n,l]) => (
+              {[["5","Destinos"],["500+","Viajeros felices"],["RNT","55541"]].map(([n,l]) => (
                 <div key={l as string}>
                   <div className="text-3xl sm:text-4xl font-black text-white">{n}</div>
                   <div className="text-xs uppercase tracking-widest text-white/70 mt-1">{l}</div>
@@ -265,7 +270,7 @@ function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
             <div className="max-w-2xl">
               <div className="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">Destinos DMC Colombia</div>
-              <h2 className="text-4xl sm:text-5xl font-black">Diez maneras de enamorarte de Colombia</h2>
+              <h2 className="text-4xl sm:text-5xl font-black">Cinco maneras de enamorarte de Colombia</h2>
             </div>
             <p className="text-muted-foreground max-w-md">Cada destino incluye alojamiento, traslados y experiencias curadas. Personalizamos cualquier itinerario a la medida.</p>
           </div>

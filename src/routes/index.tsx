@@ -33,66 +33,32 @@ const WHATSAPP = "https://wa.me/573168634645?text=Hola%20Monarco%2C%20quiero%20c
 const destinos = [
   {
     name: "Cartagena", tag: "Ciudad Amurallada",
-    img: "https://images.unsplash.com/photo-1583531352515-8884cb1dc637?w=1200&q=80",
+    img: destCartagena,
     activities: ["Alojamiento 3 Noches – 4 Días", "Traslado Aeropuerto – Hotel – Aeropuerto", "City Tour Cultural", "Full Day a Islas del Rosario", "Paseo Nocturno por la Bahía"],
   },
   {
     name: "Medellín", tag: "Ciudad de la Eterna Primavera",
-    img: "https://images.unsplash.com/photo-1633675254485-d3f06e29fbb6?w=1200&q=80",
+    img: destMedellin,
     activities: ["Alojamiento 3 Noches – 4 Días", "Traslado Aeropuerto – Hotel – Aeropuerto", "Visita a la Ciudad", "Full Day a Peñol y Guatapé"],
   },
   {
     name: "Eje Cafetero", tag: "Paisaje Cultural Cafetero",
-    img: "https://images.unsplash.com/photo-1599598425947-5a3fdc4f51f4?w=1200&q=80",
+    img: destEjeCafetero,
     activities: ["Alojamiento 3 Noches – 4 Días", "Traslado Aeropuerto – Hotel – Aeropuerto", "Filandia, Valle del Cocora y Salento", "Recorrido cultura cafetera (RECUCA)", "Parque del Café", "Termales de Santa Rosa de Cabal"],
   },
   {
     name: "Bogotá", tag: "Capital Andina",
-    img: "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=1200&q=80",
+    img: destBogota,
     activities: ["Alojamiento 3 Noches – 4 Días", "Traslado Aeropuerto – Hotel – Aeropuerto", "Visita a la Ciudad", "Full Day a Catedral de Sal de Zipaquirá"],
   },
   {
     name: "San Andrés Islas", tag: "Mar de los Siete Colores",
-    img: "https://images.unsplash.com/photo-1559666126-84f389727b9a?w=1200&q=80",
+    img: destSanAndres,
     activities: ["Alojamiento 3 Noches – 4 Días", "Traslado Aeropuerto – Hotel – Aeropuerto", "Vuelta a la Isla", "Full Day a Johnny Cay", "Tour Bahía Diurno"],
-  },
-  {
-    name: "Santa Marta", tag: "Ciudad Perdida & Tayrona",
-    img: "https://images.unsplash.com/photo-1597007030739-6d2e7172ee6c?w=1200&q=80",
-    activities: ["Parque Tayrona", "Trekking Ciudad Perdida", "Minca y cascadas", "Playa Blanca"],
-  },
-  {
-    name: "Barranquilla", tag: "Puerta de Oro",
-    img: "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=1200&q=80",
-    activities: ["Carnaval cultural", "Ventana al Mundo", "Malecón y gastronomía", "Museo del Caribe"],
-  },
-  {
-    name: "Cali", tag: "Capital de la Salsa",
-    img: "https://images.unsplash.com/photo-1622037022824-0c71d511ef3a?w=1200&q=80",
-    activities: ["Cristo Rey y Tres Cruces", "Tour de salsa", "San Antonio", "Hacienda El Paraíso"],
-  },
-  {
-    name: "Bucaramanga", tag: "Ciudad Bonita",
-    img: "https://images.unsplash.com/photo-1583245177184-4c1b1f3a3e2f?w=1200&q=80",
-    activities: ["Barichara — el pueblo más lindo", "Cañón del Chicamocha", "Parapente Mesa de Ruitoque", "San Gil aventura"],
-  },
-  {
-    name: "Huila", tag: "Desierto de la Tatacoa",
-    img: "https://images.unsplash.com/photo-1591465001609-e84e9d9d8b3a?w=1200&q=80",
-    activities: ["Desierto de la Tatacoa", "Observatorio astronómico", "San Agustín arqueológico", "Termales de Rivera"],
   },
 ];
 
-const galeria = [
-  "https://images.unsplash.com/photo-1583531352515-8884cb1dc637?w=900&q=80",
-  "https://images.unsplash.com/photo-1559666126-84f389727b9a?w=900&q=80",
-  "https://images.unsplash.com/photo-1599598425947-5a3fdc4f51f4?w=900&q=80",
-  "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=900&q=80",
-  "https://images.unsplash.com/photo-1597007030739-6d2e7172ee6c?w=900&q=80",
-  "https://images.unsplash.com/photo-1622037022824-0c71d511ef3a?w=900&q=80",
-  "https://images.unsplash.com/photo-1591465001609-e84e9d9d8b3a?w=900&q=80",
-  "https://images.unsplash.com/photo-1583245177184-4c1b1f3a3e2f?w=900&q=80",
-];
+const galeria = [destCartagena, destSanAndres, destEjeCafetero, destBogota, destMedellin, destCartagena, destSanAndres, destEjeCafetero];
 
 const testimonios = [
   { name: "Laura Restrepo", role: "Viajera Cartagena", text: "El servicio fue impecable desde el aeropuerto hasta el último día. Las Islas del Rosario fueron mágicas. ¡100% recomendados!" },

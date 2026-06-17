@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "c9a717be-e3dc-4aba-a3fb-1cea28f9f8e9",
+  "asset_id": "e9abdffd-9521-4951-88a1-9ed8989703a4",
   "project_id": "ef8306f5-85da-4c8e-bd16-0aec8c65cb92",
-  "url": "/__l5e/assets-v1/c9a717be-e3dc-4aba-a3fb-1cea28f9f8e9/monarco-logo.jpeg",
-  "r2_key": "a/v1/ef8306f5-85da-4c8e-bd16-0aec8c65cb92/c9a717be-e3dc-4aba-a3fb-1cea28f9f8e9/monarco-logo.jpeg",
-  "original_filename": "monarco-logo.jpeg",
-  "size": 28209,
-  "content_type": "image/jpeg",
-  "created_at": "2026-06-17T16:10:56Z"
+  "url": "/__l5e/assets-v1/e9abdffd-9521-4951-88a1-9ed8989703a4/monarco-logo-3d.png",
+  "r2_key": "a/v1/ef8306f5-85da-4c8e-bd16-0aec8c65cb92/e9abdffd-9521-4951-88a1-9ed8989703a4/monarco-logo-3d.png",
+  "original_filename": "monarco-logo-3d.png",
+  "size": 227835,
+  "content_type": "image/png",
+  "created_at": "2026-06-17T16:23:37Z"
 }

@@ -8,6 +8,11 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-cartagena.jpg";
 import logoAsset from "@/assets/monarco-logo.asset.json";
+import destCartagena from "@/assets/dest-cartagena.jpg";
+import destMedellin from "@/assets/dest-medellin.jpg";
+import destEjeCafetero from "@/assets/dest-eje-cafetero.jpg";
+import destBogota from "@/assets/dest-bogota.jpg";
+import destSanAndres from "@/assets/dest-san-andres.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,66 +33,32 @@ const WHATSAPP = "https://wa.me/573168634645?text=Hola%20Monarco%2C%20quiero%20c
 const destinos = [
   {
     name: "Cartagena", tag: "Ciudad Amurallada",
-    img: "https://images.unsplash.com/photo-1583531352515-8884cb1dc637?w=1200&q=80",
+    img: destCartagena,
     activities: ["Alojamiento 3 Noches – 4 Días", "Traslado Aeropuerto – Hotel – Aeropuerto", "City Tour Cultural", "Full Day a Islas del Rosario", "Paseo Nocturno por la Bahía"],
   },
   {
     name: "Medellín", tag: "Ciudad de la Eterna Primavera",
-    img: "https://images.unsplash.com/photo-1633675254485-d3f06e29fbb6?w=1200&q=80",
+    img: destMedellin,
     activities: ["Alojamiento 3 Noches – 4 Días", "Traslado Aeropuerto – Hotel – Aeropuerto", "Visita a la Ciudad", "Full Day a Peñol y Guatapé"],
   },
   {
     name: "Eje Cafetero", tag: "Paisaje Cultural Cafetero",
-    img: "https://images.unsplash.com/photo-1599598425947-5a3fdc4f51f4?w=1200&q=80",
+    img: destEjeCafetero,
     activities: ["Alojamiento 3 Noches – 4 Días", "Traslado Aeropuerto – Hotel – Aeropuerto", "Filandia, Valle del Cocora y Salento", "Recorrido cultura cafetera (RECUCA)", "Parque del Café", "Termales de Santa Rosa de Cabal"],
   },
   {
     name: "Bogotá", tag: "Capital Andina",
-    img: "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=1200&q=80",
+    img: destBogota,
     activities: ["Alojamiento 3 Noches – 4 Días", "Traslado Aeropuerto – Hotel – Aeropuerto", "Visita a la Ciudad", "Full Day a Catedral de Sal de Zipaquirá"],
   },
   {
     name: "San Andrés Islas", tag: "Mar de los Siete Colores",
-    img: "https://images.unsplash.com/photo-1559666126-84f389727b9a?w=1200&q=80",
+    img: destSanAndres,
     activities: ["Alojamiento 3 Noches – 4 Días", "Traslado Aeropuerto – Hotel – Aeropuerto", "Vuelta a la Isla", "Full Day a Johnny Cay", "Tour Bahía Diurno"],
-  },
-  {
-    name: "Santa Marta", tag: "Ciudad Perdida & Tayrona",
-    img: "https://images.unsplash.com/photo-1597007030739-6d2e7172ee6c?w=1200&q=80",
-    activities: ["Parque Tayrona", "Trekking Ciudad Perdida", "Minca y cascadas", "Playa Blanca"],
-  },
-  {
-    name: "Barranquilla", tag: "Puerta de Oro",
-    img: "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?w=1200&q=80",
-    activities: ["Carnaval cultural", "Ventana al Mundo", "Malecón y gastronomía", "Museo del Caribe"],
-  },
-  {
-    name: "Cali", tag: "Capital de la Salsa",
-    img: "https://images.unsplash.com/photo-1622037022824-0c71d511ef3a?w=1200&q=80",
-    activities: ["Cristo Rey y Tres Cruces", "Tour de salsa", "San Antonio", "Hacienda El Paraíso"],
-  },
-  {
-    name: "Bucaramanga", tag: "Ciudad Bonita",
-    img: "https://images.unsplash.com/photo-1583245177184-4c1b1f3a3e2f?w=1200&q=80",
-    activities: ["Barichara — el pueblo más lindo", "Cañón del Chicamocha", "Parapente Mesa de Ruitoque", "San Gil aventura"],
-  },
-  {
-    name: "Huila", tag: "Desierto de la Tatacoa",
-    img: "https://images.unsplash.com/photo-1591465001609-e84e9d9d8b3a?w=1200&q=80",
-    activities: ["Desierto de la Tatacoa", "Observatorio astronómico", "San Agustín arqueológico", "Termales de Rivera"],
   },
 ];
 
-const galeria = [
-  "https://images.unsplash.com/photo-1583531352515-8884cb1dc637?w=900&q=80",
-  "https://images.unsplash.com/photo-1559666126-84f389727b9a?w=900&q=80",
-  "https://images.unsplash.com/photo-1599598425947-5a3fdc4f51f4?w=900&q=80",
-  "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=900&q=80",
-  "https://images.unsplash.com/photo-1597007030739-6d2e7172ee6c?w=900&q=80",
-  "https://images.unsplash.com/photo-1622037022824-0c71d511ef3a?w=900&q=80",
-  "https://images.unsplash.com/photo-1591465001609-e84e9d9d8b3a?w=900&q=80",
-  "https://images.unsplash.com/photo-1583245177184-4c1b1f3a3e2f?w=900&q=80",
-];
+const galeria = [destCartagena, destSanAndres, destEjeCafetero, destBogota, destMedellin, destCartagena, destSanAndres, destEjeCafetero];
 
 const testimonios = [
   { name: "Laura Restrepo", role: "Viajera Cartagena", text: "El servicio fue impecable desde el aeropuerto hasta el último día. Las Islas del Rosario fueron mágicas. ¡100% recomendados!" },
@@ -101,18 +72,18 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* NAVBAR */}
-      <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/40">
+      <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-transparent">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
           <a href="#inicio" className="flex items-center gap-2 shrink-0">
             <img src={logoAsset.url} alt="Monarco Viajes y Turismo" className="h-12 w-auto" />
           </a>
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
-            <a href="#nosotros" className="hover:text-primary transition">Nosotros</a>
-            <a href="#servicios" className="hover:text-primary transition">Servicios</a>
-            <a href="#destinos" className="hover:text-primary transition">Destinos</a>
-            <a href="#galeria" className="hover:text-primary transition">Galería</a>
-            <a href="#testimonios" className="hover:text-primary transition">Testimonios</a>
-            <a href="#contacto" className="hover:text-primary transition">Contacto</a>
+          <nav className="hidden lg:flex items-center gap-8 text-sm font-semibold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+            <a href="#nosotros" className="hover:text-secondary transition">Nosotros</a>
+            <a href="#servicios" className="hover:text-secondary transition">Servicios</a>
+            <a href="#destinos" className="hover:text-secondary transition">Destinos</a>
+            <a href="#galeria" className="hover:text-secondary transition">Galería</a>
+            <a href="#testimonios" className="hover:text-secondary transition">Testimonios</a>
+            <a href="#contacto" className="hover:text-secondary transition">Contacto</a>
           </nav>
           <a href={WHATSAPP} target="_blank" rel="noopener" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition shadow-glow">
             Cotizar <ArrowRight className="h-4 w-4" />
@@ -122,7 +93,7 @@ function HomePage() {
           </button>
         </div>
         {open && (
-          <div className="lg:hidden border-t border-border/40 bg-background">
+          <div className="lg:hidden backdrop-blur-xl bg-background/80 border-t border-border/40">
             <nav className="px-6 py-5 flex flex-col gap-4 text-sm font-medium">
               {["nosotros","servicios","destinos","galeria","testimonios","contacto"].map(s => (
                 <a key={s} href={`#${s}`} onClick={() => setOpen(false)} className="capitalize">{s}</a>
@@ -162,7 +133,7 @@ function HomePage() {
               </a>
             </div>
             <div className="mt-14 grid grid-cols-3 gap-6 max-w-xl">
-              {[["10+","Destinos"],["500+","Viajeros felices"],["RNT","55541"]].map(([n,l]) => (
+              {[["5","Destinos"],["500+","Viajeros felices"],["RNT","55541"]].map(([n,l]) => (
                 <div key={l as string}>
                   <div className="text-3xl sm:text-4xl font-black text-white">{n}</div>
                   <div className="text-xs uppercase tracking-widest text-white/70 mt-1">{l}</div>
@@ -265,7 +236,7 @@ function HomePage() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
             <div className="max-w-2xl">
               <div className="text-xs font-bold uppercase tracking-[0.25em] text-primary mb-4">Destinos DMC Colombia</div>
-              <h2 className="text-4xl sm:text-5xl font-black">Diez maneras de enamorarte de Colombia</h2>
+              <h2 className="text-4xl sm:text-5xl font-black">Cinco maneras de enamorarte de Colombia</h2>
             </div>
             <p className="text-muted-foreground max-w-md">Cada destino incluye alojamiento, traslados y experiencias curadas. Personalizamos cualquier itinerario a la medida.</p>
           </div>

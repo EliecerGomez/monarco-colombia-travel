@@ -6,13 +6,28 @@ import {
   MessageCircle, ArrowRight, Star, Check, Menu, X, Calendar, Sparkles,
   Briefcase, GraduationCap, Globe2,
 } from "lucide-react";
-import heroImg from "@/assets/hero-cartagena.jpg";
+import heroAsset from "@/assets/hero-cartagena.jpg.asset.json";
 import logoAsset from "@/assets/monarco-logo.asset.json";
-import destCartagena from "@/assets/dest-cartagena.jpg";
+import destCartagenaAsset from "@/assets/dest-cartagena.jpg.asset.json";
 import destMedellin from "@/assets/dest-medellin.jpg";
 import destEjeCafetero from "@/assets/dest-eje-cafetero.jpg";
 import destBogota from "@/assets/dest-bogota.jpg";
-import destSanAndres from "@/assets/dest-san-andres.jpg";
+import destSanAndresAsset from "@/assets/dest-san-andres.jpg.asset.json";
+
+const heroImg = heroAsset.url;
+const destCartagena = destCartagenaAsset.url;
+const destSanAndres = destSanAndresAsset.url;
+// Real Colombia photos (Unsplash) for gallery
+const galleryPhotos = [
+  "https://images.unsplash.com/photo-1583531352515-8884cb1dc637?w=1200&q=85", // Cartagena
+  "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=1200&q=85", // Medellin
+  "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=1200&q=85", // Bogota
+  "https://images.unsplash.com/photo-1610476362017-841a3a909d5d?w=1200&q=85", // Guatape
+  "https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?w=1200&q=85", // San Andres
+  "https://images.unsplash.com/photo-1591017403286-fd8493ba2d51?w=1200&q=85", // Cocora valley
+  "https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?w=1200&q=85", // Tayrona
+  "https://images.unsplash.com/photo-1568454537842-d933259bb1ce?w=1200&q=85", // Medellin Comuna 13
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -58,7 +73,7 @@ const destinos = [
   },
 ];
 
-const galeria = [destCartagena, destSanAndres, destEjeCafetero, destBogota, destMedellin, destCartagena, destSanAndres, destEjeCafetero];
+const galeria = galleryPhotos;
 
 const testimonios = [
   { name: "Laura Restrepo", role: "Viajera Cartagena", text: "El servicio fue impecable desde el aeropuerto hasta el último día. Las Islas del Rosario fueron mágicas. ¡100% recomendados!" },
@@ -180,7 +195,7 @@ function HomePage() {
 
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-glow">
-              <img src="https://images.unsplash.com/photo-1583531352515-8884cb1dc637?w=1200&q=85" alt="Cartagena colonial" className="w-full h-[560px] object-cover" loading="lazy" />
+              <img src={heroImg} alt="Cartagena colonial" className="w-full h-[560px] object-cover" loading="lazy" />
             </div>
             <div className="absolute -bottom-6 -left-6 rounded-2xl bg-background border border-border p-5 shadow-glow max-w-[260px]">
               <div className="flex items-center gap-1 text-secondary mb-1">
@@ -285,9 +300,9 @@ function HomePage() {
           </div>
           <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
             {galeria.map((src, i) => (
-              <motion.div key={src} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.05 }}
+              <motion.div key={`${src}-${i}`} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.05 }}
                 className="break-inside-avoid overflow-hidden rounded-2xl group">
-                <img src={src} alt="" className={`w-full object-cover group-hover:scale-105 transition duration-500 ${i % 3 === 0 ? "h-80" : i % 3 === 1 ? "h-60" : "h-72"}`} loading="lazy" />
+                <img src={src} alt="Colombia destino real" className={`w-full object-cover group-hover:scale-105 transition duration-500 ${i % 3 === 0 ? "h-80" : i % 3 === 1 ? "h-60" : "h-72"}`} loading="lazy" />
               </motion.div>
             ))}
           </div>

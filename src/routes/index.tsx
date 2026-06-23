@@ -297,11 +297,11 @@ function HomePage() {
             <h2 className="text-4xl sm:text-5xl font-black">Momentos Monarco</h2>
             <p className="mt-4 text-muted-foreground">Playas, ciudades, tours y experiencias que cuentan historias.</p>
           </div>
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {galeria.map((src, i) => (
               <motion.div key={`${src}-${i}`} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="break-inside-avoid overflow-hidden rounded-2xl group">
-                <img src={src} alt="Colombia destino real" className={`w-full object-cover group-hover:scale-105 transition duration-500 ${i % 3 === 0 ? "h-80" : i % 3 === 1 ? "h-60" : "h-72"}`} loading="lazy" />
+                className="overflow-hidden rounded-2xl group aspect-square">
+                <img src={src} alt="Paisaje turístico de Colombia" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
               </motion.div>
             ))}
           </div>

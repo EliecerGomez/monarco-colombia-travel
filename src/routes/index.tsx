@@ -426,7 +426,7 @@ function HomePage() {
       </footer>
 
       {/* WhatsApp flotante */}
-      <a href={WHATSAPP} target="_blank" rel="noopener" aria-label="WhatsApp"
+      <a href={WHATSAPP_FLOTANTE} target="_blank" rel="noopener" aria-label="WhatsApp"
         className="fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full grid place-items-center text-white shadow-glow hover:scale-110 transition"
         style={{ background: "#25D366" }}>
         <MessageCircle className="h-7 w-7" />

@@ -43,6 +43,7 @@ export const Route = createFileRoute("/")({
 });
 
 const WHATSAPP = "https://wa.me/573168634645?text=Hola%20Monarco%2C%20quiero%20cotizar%20un%20viaje";
+const WHATSAPP_FLOTANTE = "https://wa.me/573156798546?text=Hola%20Monarco%2C%20quiero%20cotizar%20un%20viaje";
 
 const destinos = [
   {

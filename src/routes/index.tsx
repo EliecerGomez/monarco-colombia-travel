@@ -17,17 +17,16 @@ import destSanAndresAsset from "@/assets/dest-san-andres.jpg.asset.json";
 const heroImg = heroAsset.url;
 const destCartagena = destCartagenaAsset.url;
 const destSanAndres = destSanAndresAsset.url;
-// Real Colombia photos (Unsplash) for gallery
-const galleryPhotos = [
-  "https://images.unsplash.com/photo-1583531352515-8884cb1dc637?w=1200&q=85", // Cartagena
-  "https://images.unsplash.com/photo-1568632234157-ce7aecd03d0d?w=1200&q=85", // Medellin
-  "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=1200&q=85", // Bogota
-  "https://images.unsplash.com/photo-1610476362017-841a3a909d5d?w=1200&q=85", // Guatape
-  "https://images.unsplash.com/photo-1605723517503-3cadb5818a0c?w=1200&q=85", // San Andres
-  "https://images.unsplash.com/photo-1591017403286-fd8493ba2d51?w=1200&q=85", // Cocora valley
-  "https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?w=1200&q=85", // Tayrona
-  "https://images.unsplash.com/photo-1568454537842-d933259bb1ce?w=1200&q=85", // Medellin Comuna 13
-];
+import gal1 from "@/assets/gal-1.jpg";
+import gal2 from "@/assets/gal-2.jpg";
+import gal3 from "@/assets/gal-3.jpg";
+import gal4 from "@/assets/gal-4.jpg";
+import gal5 from "@/assets/gal-5.jpg";
+import gal6 from "@/assets/gal-6.jpg";
+import gal7 from "@/assets/gal-7.jpg";
+import gal8 from "@/assets/gal-8.jpg";
+const galleryPhotos = [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8];
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -298,11 +297,11 @@ function HomePage() {
             <h2 className="text-4xl sm:text-5xl font-black">Momentos Monarco</h2>
             <p className="mt-4 text-muted-foreground">Playas, ciudades, tours y experiencias que cuentan historias.</p>
           </div>
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {galeria.map((src, i) => (
               <motion.div key={`${src}-${i}`} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.05 }}
-                className="break-inside-avoid overflow-hidden rounded-2xl group">
-                <img src={src} alt="Colombia destino real" className={`w-full object-cover group-hover:scale-105 transition duration-500 ${i % 3 === 0 ? "h-80" : i % 3 === 1 ? "h-60" : "h-72"}`} loading="lazy" />
+                className="overflow-hidden rounded-2xl group aspect-square">
+                <img src={src} alt="Paisaje turístico de Colombia" className="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
               </motion.div>
             ))}
           </div>

@@ -14,9 +14,12 @@ import destEjeCafetero from "@/assets/dest-eje-cafetero.jpg";
 import destBogota from "@/assets/dest-bogota.jpg";
 import destSanAndresAsset from "@/assets/dest-san-andres.jpg.asset.json";
 
-const heroImg = heroAsset.url;
-const destCartagena = destCartagenaAsset.url;
-const destSanAndres = destSanAndresAsset.url;
+const CDN_BASE = "https://id-preview--ef8306f5-85da-4c8e-bd16-0aec8c65cb92.lovable.app";
+const toCdn = (u: string) => (u.startsWith("/__l5e/") ? CDN_BASE + u : u);
+const heroImg = toCdn(heroAsset.url);
+const destCartagena = toCdn(destCartagenaAsset.url);
+const destSanAndres = toCdn(destSanAndresAsset.url);
+const logoUrl = toCdn(logoAsset.url);
 import gal1 from "@/assets/gal-1.jpg";
 import gal2 from "@/assets/gal-2.jpg";
 import gal3 from "@/assets/gal-3.jpg";
@@ -90,7 +93,7 @@ function HomePage() {
       <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-transparent">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 h-20 flex items-center justify-between gap-4">
           <a href="#inicio" className="flex items-center gap-2 shrink-0">
-            <img src={logoAsset.url} alt="Monarco Viajes y Turismo" className="h-12 w-auto" />
+            <img src={logoUrl} alt="Monarco Viajes y Turismo" className="h-12 w-auto" />
           </a>
           <nav className="hidden lg:flex items-center gap-8 text-sm font-semibold text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
             <a href="#nosotros" className="hover:text-secondary transition">Nosotros</a>
@@ -397,7 +400,7 @@ function HomePage() {
       <footer className="bg-foreground text-background/80 border-t border-background/10 px-5 sm:px-8 py-12">
         <div className="mx-auto max-w-7xl grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
-            <img src={logoAsset.url} alt="Monarco" className="h-14 w-auto brightness-0 invert opacity-90 mb-4" />
+            <img src={logoUrl} alt="Monarco" className="h-14 w-auto brightness-0 invert opacity-90 mb-4" />
             <p className="text-sm max-w-md">Agencia de viajes y turismo DMC Colombia. Experiencias premium con calidez caribeña. RNT 55541.</p>
           </div>
           <div>

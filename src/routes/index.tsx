@@ -24,15 +24,20 @@ import gal8 from "@/assets/gal-8.jpg";
 const galleryPhotos = [gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8];
 
 
+// Dominio de producción. Se usa para construir URLs absolutas (OG/canonical),
+// que es lo que exigen los scrapers de WhatsApp/Facebook/Twitter.
+const SITE_URL = "https://monarcovt.com";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Monarco Viajes y Turismo — DMC Colombia | Experiencias Premium" },
       { name: "description", content: "Descubre Colombia con experiencias inolvidables. Agencia de viajes DMC con transporte, turismo receptivo, corporativo y viajes grupales. RNT 55541." },
+      { property: "og:url", content: SITE_URL + "/" },
       { property: "og:title", content: "Monarco Viajes y Turismo — DMC Colombia" },
       { property: "og:description", content: "Turismo, transporte y experiencias premium en todo el país." },
-      { property: "og:image", content: heroImg },
-      { name: "twitter:image", content: heroImg },
+      { property: "og:image", content: SITE_URL + heroImg },
+      { name: "twitter:image", content: SITE_URL + heroImg },
     ],
   }),
   component: HomePage,

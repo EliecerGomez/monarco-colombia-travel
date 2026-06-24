@@ -19,7 +19,7 @@ const toCdn = (u: string) => (u.startsWith("/__l5e/") ? CDN_BASE + u : u);
 const heroImg = toCdn(heroAsset.url);
 const destCartagena = toCdn(destCartagenaAsset.url);
 const destSanAndres = toCdn(destSanAndresAsset.url);
-const logoUrl = toCdn(logoUrl);
+const logoUrl = toCdn(logoAsset.url);
 import gal1 from "@/assets/gal-1.jpg";
 import gal2 from "@/assets/gal-2.jpg";
 import gal3 from "@/assets/gal-3.jpg";

@@ -14,9 +14,12 @@ import destEjeCafetero from "@/assets/dest-eje-cafetero.jpg";
 import destBogota from "@/assets/dest-bogota.jpg";
 import destSanAndresAsset from "@/assets/dest-san-andres.jpg.asset.json";
 
-const heroImg = heroAsset.url;
-const destCartagena = destCartagenaAsset.url;
-const destSanAndres = destSanAndresAsset.url;
+const CDN_BASE = "https://id-preview--ef8306f5-85da-4c8e-bd16-0aec8c65cb92.lovable.app";
+const toCdn = (u: string) => (u.startsWith("/__l5e/") ? CDN_BASE + u : u);
+const heroImg = toCdn(heroAsset.url);
+const destCartagena = toCdn(destCartagenaAsset.url);
+const destSanAndres = toCdn(destSanAndresAsset.url);
+const logoUrl = toCdn(logoAsset.url);
 import gal1 from "@/assets/gal-1.jpg";
 import gal2 from "@/assets/gal-2.jpg";
 import gal3 from "@/assets/gal-3.jpg";

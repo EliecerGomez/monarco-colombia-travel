@@ -6,6 +6,10 @@
 # No listar el contenido de los directorios
 Options -Indexes
 
+# Servir nuestro index.html en "/" aunque cPanel haya dejado un index.php
+# por defecto (que de lo contrario tiene prioridad).
+DirectoryIndex index.html index.htm
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 

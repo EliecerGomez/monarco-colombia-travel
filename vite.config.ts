@@ -7,9 +7,16 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  // Self-host deploy (ColombiaHosting / cPanel-LiteSpeed, static).
+  // We do NOT force Nitro on: outside a Lovable build the wrapper produces a
+  // native, Vite-only TanStack Start build (client -> dist/client, server ->
+  // dist/server/server.js). That native layout is what the prerenderer's
+  // preview server expects, so prerendering works and emits static HTML.
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
     server: { entry: "server" },
+    // Prerender every route to static HTML so meta/OG tags are in the initial
+    // payload (SEO + social/WhatsApp link previews), not injected client-side.
+    prerender: { enabled: true, crawlLinks: true },
   },
 });

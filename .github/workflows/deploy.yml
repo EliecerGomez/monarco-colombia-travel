@@ -1,0 +1,51 @@
+name: Deploy producción (ColombiaHosting)
+
+# Cada push a `main` reconstruye el sitio y lo publica en el hosting por FTP.
+# `develop` es para desarrollo y NO dispara despliegue.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {} # permite lanzarlo a mano desde la pestaña Actions
+
+# Si llegan dos pushes seguidos, cancela el despliegue anterior en curso.
+concurrency:
+  group: produccion-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Instalar dependencias
+        run: bun install --frozen-lockfile
+
+      - name: Compilar sitio estático (prerender)
+        run: bun run build
+
+      - name: Publicar en public_html por FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Si ColombiaHosting no acepta FTPS, cambia a: ftp
+          protocol: ftps
+          port: 21
+          # Solo subimos la carpeta estática ya compilada.
+          local-dir: ./dist/client/
+          # Carpeta destino en el servidor (normalmente /public_html/).
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+          # Sube solo lo que cambió (sincronización incremental).
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**

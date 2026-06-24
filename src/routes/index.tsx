@@ -6,20 +6,13 @@ import {
   MessageCircle, ArrowRight, Star, Check, Menu, X, Calendar, Sparkles,
   Briefcase, GraduationCap, Globe2,
 } from "lucide-react";
-import heroAsset from "@/assets/hero-cartagena.jpg.asset.json";
-import logoAsset from "@/assets/monarco-logo.asset.json";
-import destCartagenaAsset from "@/assets/dest-cartagena.jpg.asset.json";
+import heroImg from "@/assets/hero-cartagena.jpg";
+import logoUrl from "@/assets/monarco-logo.png";
+import destCartagena from "@/assets/dest-cartagena.jpg";
 import destMedellin from "@/assets/dest-medellin.jpg";
 import destEjeCafetero from "@/assets/dest-eje-cafetero.jpg";
 import destBogota from "@/assets/dest-bogota.jpg";
-import destSanAndresAsset from "@/assets/dest-san-andres.jpg.asset.json";
-
-const CDN_BASE = "https://id-preview--ef8306f5-85da-4c8e-bd16-0aec8c65cb92.lovable.app";
-const toCdn = (u: string) => (u.startsWith("/__l5e/") ? CDN_BASE + u : u);
-const heroImg = toCdn(heroAsset.url);
-const destCartagena = toCdn(destCartagenaAsset.url);
-const destSanAndres = toCdn(destSanAndresAsset.url);
-const logoUrl = toCdn(logoAsset.url);
+import destSanAndres from "@/assets/dest-san-andres.jpg";
 import gal1 from "@/assets/gal-1.jpg";
 import gal2 from "@/assets/gal-2.jpg";
 import gal3 from "@/assets/gal-3.jpg";

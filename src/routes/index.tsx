@@ -603,37 +603,87 @@ function HomePage() {
       </section>}
 
       {/* FOOTER */}
-      <footer className="bg-foreground text-background/80 border-t border-background/10 px-5 sm:px-8 py-12">
-        <div className="mx-auto max-w-7xl grid md:grid-cols-4 gap-10">
+      <footer className="bg-foreground text-background/80 px-5 sm:px-8 pt-14 pb-8">
+        <div className="mx-auto max-w-7xl grid md:grid-cols-4 gap-10 pb-10">
+
+          {/* Col 1 — Logo + descripción */}
           <div className="md:col-span-2">
             <img src={logoUrl} alt="Monarco" className="h-14 w-auto brightness-0 invert opacity-90 mb-4" />
-            <p className="text-sm max-w-md">Agencia de viajes y turismo DMC Colombia. Experiencias premium con calidez caribeña. RNT 55541.</p>
+            <p className="text-sm italic text-background/70 leading-relaxed mb-4 max-w-xs">
+              Turismo, transporte y experiencias premium en todo Colombia. Calidez caribeña y confianza de una agencia local.
+            </p>
+            <p className="text-sm font-bold text-background">Monarco Viajes y Turismo</p>
+            <p className="text-xs text-background/50 mt-1">RNT: 55541 · Colombia</p>
           </div>
+
+          {/* Col 2 — Explora */}
           <div>
             <div className="font-bold text-background mb-4 text-sm">Explora</div>
             <ul className="space-y-2 text-sm">
-              {[["nosotros","Nosotros"],["servicios","Servicios"],["destinos","Destinos"],["galeria","Galería"]].map(([k,l]) => (
+              {[["nosotros","Nosotros"],["servicios","Servicios"],["destinos","Destinos"],["galeria","Galería"],["testimonios","Testimonios"],["contacto","Contacto"]].map(([k,l]) => (
                 <li key={k}><button onClick={() => navigate(k)} className="hover:text-secondary transition">{l}</button></li>
               ))}
             </ul>
           </div>
+
+          {/* Col 3 — Contacto + redes */}
           <div>
             <div className="font-bold text-background mb-4 text-sm">Contacto</div>
-            <ul className="space-y-2 text-sm">
-              <li>reservas@monarcovt.com</li>
-              <li>+57 315 6798546</li>
-              <li>Colombia · RNT 55541</li>
+            <ul className="space-y-4 text-sm">
+              <li>
+                <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-0.5">Correo electrónico</p>
+                <span>reservas@monarcovt.com</span>
+              </li>
+              <li>
+                <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-0.5">Teléfono</p>
+                <span>+57 315 6798546</span>
+              </li>
+              <li>
+                <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-0.5">Código RNT</p>
+                <span>55541 · Colombia</span>
+              </li>
             </ul>
+
+            <div className="mt-6">
+              <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Síguenos en nuestras redes sociales</p>
+              <div className="flex items-center gap-3">
+                {[
+                  { href: "https://www.instagram.com/monarcovt?igsh=NzA2MDJ1ZDV3dDMw", label: "Instagram", icon: (
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                  )},
+                  { href: "https://www.facebook.com/share/18v6b2yWyr/", label: "Facebook", icon: (
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                  )},
+                  { href: "https://www.tiktok.com/@monarcovt?_r=1&_t=ZS-97ljtS0Eq3x", label: "TikTok", icon: (
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+                    </svg>
+                  )},
+                  { href: "https://wa.me/573156798546?text=Hola%20Monarco%2C%20quiero%20cotizar%20un%20viaje", label: "WhatsApp", icon: (
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.526 5.845L.057 23.571a.5.5 0 0 0 .608.663l5.9-1.528A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.9a9.9 9.9 0 0 1-5.031-1.371l-.36-.214-3.733.967.997-3.617-.235-.373A9.86 9.86 0 0 1 2.1 12C2.1 6.534 6.534 2.1 12 2.1S21.9 6.534 21.9 12 17.466 21.9 12 21.9z"/>
+                    </svg>
+                  )},
+                ].map(({ href, label, icon }) => (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+                    className="h-10 w-10 rounded-full bg-background/10 hover:bg-secondary hover:text-foreground flex items-center justify-center text-background/70 transition-colors duration-200">
+                    {icon}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mx-auto max-w-7xl mt-10 pt-6 border-t border-background/10 text-xs space-y-3">
-          <div className="flex flex-wrap justify-between gap-4">
-            <span>© {new Date().getFullYear()} Monarco Viajes y Turismo. Todos los derechos reservados.</span>
-            <span>Hecho con orgullo en Colombia 🇨🇴</span>
-          </div>
-          <div className="text-center pt-1">
-            <span className="text-secondary font-semibold tracking-wide">Diseñado y desarrollado por Eliecer Gomez</span>
-          </div>
+
+        {/* Barra inferior */}
+        <div className="mx-auto max-w-7xl border-t border-background/10 pt-6 text-xs text-center space-y-2">
+          <p className="text-secondary font-semibold tracking-wide">Diseñado y desarrollado por Eliecer Gomez</p>
+          <p>© {new Date().getFullYear()} Monarco Viajes y Turismo. Todos los derechos reservados.</p>
         </div>
       </footer>
 
